@@ -5,6 +5,7 @@ import { SiRainmeter } from "react-icons/si";
 import { SiSunrise } from "react-icons/si";
 import axios from 'axios';
 import API from "../API"
+import { useWeatherContext } from '../context/WeatherContext';
 
 type daysData ={
     name:string,
@@ -25,7 +26,8 @@ type daysData ={
 const Content = () => {
     const [data,setData] = useState<daysData[]>([]);
     const [hourly,setHourly] =useState<hourlyData[]>([]);
-    const [getLocation,setGetLocation] = useState<String>("");
+    const{getLocation,setGetLocation} = useWeatherContext();
+    // const [getLocation,setGetLocation] = useState<String>("");
 
     const getWeatherInfo = async()=>{
         try {
