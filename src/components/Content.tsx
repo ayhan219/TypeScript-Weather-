@@ -22,7 +22,7 @@ type daysData ={
 const Content = () => {
     const [data,setData] = useState<daysData[]>([]);
     // const [hourly,setHourly] =useState<hourlyData[]>([]);
-    const{getLocation,setGetLocation,hourly,setHourly,desc,setDesc} = useWeatherContext();
+    const{getLocation,setGetLocation,hourly,setHourly} = useWeatherContext();
     // const [getLocation,setGetLocation] = useState<String>("");
 
     const getWeatherInfo = async()=>{
