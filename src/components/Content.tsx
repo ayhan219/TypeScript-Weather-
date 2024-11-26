@@ -1,16 +1,45 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaTemperatureHigh } from "react-icons/fa";
 import { FaWind } from "react-icons/fa";
 import { SiRainmeter } from "react-icons/si";
 import { SiSunrise } from "react-icons/si";
+import axios from 'axios';
+import API from "../API"
 
-type Props = {}
+type daysData ={
+    type:string,
+    temperature:string,
+    weatherIcon:string,
+    
+  }
 
-const Content = (props: Props) => {
+const Content = () => {
+    const [data,setData] = useState<daysData[]>([]);
+    const [getLocation,setGetLocation] = useState<String>("");
+
+    const getWeatherInfo = async()=>{
+        try {
+            const response = await axios.get(`http://api.weatherstack.com/current?access_key=${API}&query=LOCATION`)
+        } catch (error) {
+            console.log(error);
+            
+        }
+    }
+
+    useEffect(()=>{
+
+    },)
+
+    const pressKey = (e:React.KeyboardEvent<HTMLInputElement>)=>{
+        if(e.key ==="Enter"){
+            setGetLocation(e.currentTarget.value);
+        }
+    }
+    
   return (
     <div className='w-[50%] h-full ml-8 flex flex-col'>
         <div>
-        <input className='w-full h-10 bg-[#202B3D] outline-none rounded-lg text-white text-xl' placeholder='Search for cities' type="text" />
+        <input onKeyDown={(e)=>pressKey(e)} className='w-full h-10 bg-[#202B3D] outline-none rounded-lg text-white text-xl' placeholder='Search for cities' type="text" />
         </div>
         <div className='w-full h-auto text-white flex justify-between p-8'>
             <div className='flex flex-col w-full justify-evenly'>
