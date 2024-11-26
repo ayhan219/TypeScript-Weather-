@@ -106,45 +106,34 @@ const Content = () => {
                 <img className='w-64 h-64 object-cover' src={`https://openweathermap.org/img/wn/${data[0]?.icon}@2x.png`} alt="" />
             </div>
         </div>
-        <div className='w-full h-72 rounded-xl bg-[#202B3C] '>
-            <div className='p-5'>
-                <h3 className='text-base text-[#828D9E] font-semibold'>TODAY'S FORECAST</h3>
-            </div>
-            <div className='w-full h-auto'>
-                <div className='p-8 flex gap-8 '>
-                    <div className='w-28  border-r border-[#828D9E] flex flex-col items-center justify-center gap-5'>
-                    <p className='text-[#828D9E] font-semibold'>{hourly[0]?.time.slice(10)}</p>
-                    <img className='w-14 h-14' src={`https://openweathermap.org/img/wn/${hourly[0]?.icon}@2x.png`} alt="" />
-                    <p className='text-white font-bold text-xl'>{hourly[0]?.temp && `${Math.floor(Number(hourly[0]?.temp))}°`}</p>
-                    </div>
-                    <div className='w-28  border-r border-[#828D9E] flex flex-col items-center justify-center gap-5'>
-                    <p className='text-[#828D9E] font-semibold'>{hourly[1]?.time.slice(10)}</p>
-                    <img className='w-14 h-14' src={`https://openweathermap.org/img/wn/${hourly[1]?.icon}@2x.png`} alt="" />
-                    <p className='text-white font-bold text-xl'>{hourly[1]?.temp && `${Math.floor(Number(hourly[1]?.temp))}°`}</p>
-                    </div>
-                    <div className='w-28  border-r border-[#828D9E] flex flex-col items-center justify-center gap-5'>
-                    <p className='text-[#828D9E] font-semibold'>{hourly[2]?.time.slice(10)}</p>
-                    <img className='w-14 h-14' src={`https://openweathermap.org/img/wn/${hourly[2]?.icon}@2x.png`} alt="" />
-                    <p className='text-white font-bold text-xl'>{hourly[2]?.temp && `${Math.floor(Number(hourly[2]?.temp))}°`}</p>
-                    </div>
-                    <div className='w-28  border-r border-[#828D9E] flex flex-col items-center justify-center gap-5'>
-                    <p className='text-[#828D9E] font-semibold'>{hourly[3]?.time.slice(10)}</p>
-                    <img className='w-14 h-14' src={`https://openweathermap.org/img/wn/${hourly[3]?.icon}@2x.png`} alt="" />
-                    <p className='text-white font-bold text-xl'>{hourly[3]?.temp && `${Math.floor(Number(hourly[3]?.temp))}°`}</p>
-                    </div>
-                    <div className='w-28  border-r border-[#828D9E] flex flex-col items-center justify-center gap-5'>
-                    <p className='text-[#828D9E] font-semibold'>{hourly[4]?.time.slice(10)}</p>
-                    <img className='w-14 h-14' src={`https://openweathermap.org/img/wn/${hourly[4]?.icon}@2x.png`} alt="" />
-                    <p className='text-white font-bold text-xl'>{hourly[4]?.temp && `${Math.floor(Number(hourly[4]?.temp))}°`}</p>
-                    </div>
-                    <div className='w-28  border-r border-[#828D9E] flex flex-col items-center justify-center gap-5'>
-                    <p className='text-[#828D9E] font-semibold'>{hourly[5]?.time.slice(10)}</p>
-                    <img className='w-14 h-14' src={`https://openweathermap.org/img/wn/${hourly[5]?.icon}@2x.png`} alt="" />
-                    <p className='text-white font-bold text-xl'>{hourly[5]?.temp && `${Math.floor(Number(hourly[5]?.temp))}°`}</p>
-                    </div>
-                </div>
-            </div>
+        <div className="w-full h-72 rounded-xl bg-[#202B3C] shadow-lg">
+  <div className="p-5">
+    <h3 className="text-base text-[#828D9E] font-semibold">TODAY'S FORECAST</h3>
+  </div>
+  <div className="w-full h-auto">
+    <div className="p-6 flex justify-between gap-6 overflow-x-auto">
+      {hourly.slice(0, 6).map((hour, index) => (
+        <div
+          key={index}
+          className="w-24 flex flex-col items-center justify-center gap-3 bg-[#2A3B4C] rounded-lg py-3 px-2"
+        >
+          <p className="text-[#828D9E] font-semibold text-sm">
+            {hour?.time.slice(10)}
+          </p>
+          <img
+            className="w-16 h-16 object-contain"
+            src={`https://openweathermap.org/img/wn/${hour?.icon}@2x.png`}
+            alt={`Weather Icon for ${hour?.time}`}
+          />
+          <p className="text-white font-bold text-xl">
+            {hour?.temp && `${Math.floor(Number(hour?.temp))}°`}
+          </p>
         </div>
+      ))}
+    </div>
+  </div>
+</div>
+
         <div className='w-full h-60 mt-5 bg-[#202B3C] rounded-xl '>
         <div className='p-3 w-full flex justify-between'>
                 <h3 className='text-base text-[#828D9E] font-semibold'>AIR CONDITIONS</h3>
