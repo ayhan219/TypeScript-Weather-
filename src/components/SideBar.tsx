@@ -18,7 +18,7 @@ const SideBar = (props: Props) => {
     }
   return (
     <div className='w-32 h-full bg-[#202B3D] rounded-lg'>
-        <div className='text-5xl text-white flex justify-center pt-4'>
+        <div className='text-5xl text-white flex justify-center pt-4 cursor-pointer'>
             <MdTornado />
         </div>
         <div className='text-white flex flex-col gap-6 pt-10 '>

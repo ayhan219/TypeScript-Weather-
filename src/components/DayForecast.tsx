@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 import DayForecastSingle from './DayForecastSingle'
 
+type Props = {}
 
-
-const DayForecast = () => {
+const DayForecast = (props: Props) => {
   const [days, setDays] = useState<string[]>(["today", "tuesday", "wednessday", "thursday", "friday", "saturday", "sunday"]);
-
   
   return (
     <div className='w-[40%] h-[89%] bg-[#202B3C] ml-8 mt-24 rounded-xl p-5 '>
