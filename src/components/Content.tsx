@@ -18,15 +18,11 @@ type daysData ={
     
   }
 
-  type hourlyData ={
-    time: string,
-    temp:string,
-    icon: string,
-  }
+ 
 const Content = () => {
     const [data,setData] = useState<daysData[]>([]);
-    const [hourly,setHourly] =useState<hourlyData[]>([]);
-    const{getLocation,setGetLocation} = useWeatherContext();
+    // const [hourly,setHourly] =useState<hourlyData[]>([]);
+    const{getLocation,setGetLocation,hourly,setHourly,desc,setDesc} = useWeatherContext();
     // const [getLocation,setGetLocation] = useState<String>("");
 
     const getWeatherInfo = async()=>{
@@ -41,7 +37,6 @@ const Content = () => {
                speed: response.data.wind.speed,
                description: response.data.weather[0].description
               }];
-              console.log(response.data);
               
               setData(newData);
         } catch (error) {
@@ -57,9 +52,12 @@ const Content = () => {
             const hourlyDataList = response.data.list.map((item: any) => ({
                 time: item.dt_txt, 
                 temp: item.main.temp, 
-                icon: item.weather[0].icon, 
+                icon: item.weather[0].icon,
+                desc: item.weather[0].main, 
               }));
+              
 
+              
             setHourly(hourlyDataList);
               
         } catch (error) {
