@@ -138,22 +138,22 @@ const Content = () => {
       </div>
 
       {/* Air Conditions */}
-      <div className="md:w-full w-[80%] h-auto mt-5 bg-[#202B3C] rounded-xl p-6">
+      <div className="md:w-full w-[80%] h-auto mt-5 bg-[#202B3C] rounded-xl  p-6">
         <div className="w-full flex justify-between items-center">
-          <h3 className="text-base text-[#828D9E] font-semibold">
+          <h3 className="text-sm md:text-base text-[#828D9E] font-semibold">
             AIR CONDITIONS
           </h3>
-          <button className="w-20 h-10 bg-blue-500 text-white font-bold rounded-full">
+          <button className="w-12 h-12 md:w-20  md:h-10 bg-blue-500 text-sm md:text-base text-white font-bold rounded-full">
             See more
           </button>
         </div>
-        <div className="flex flex-wrap gap-6 mt-6">
+        <div className="flex justify-center md:justify-normal flex-wrap gap-6 mt-6">
           <div className="w-[45%] text-[#656F81]">
             <div className="flex gap-3 items-center">
               <FaTemperatureHigh className="text-3xl" />
               <h3 className="text-xl font-semibold">Real Feel</h3>
             </div>
-            <p className="text-[#B7C0CC] font-bold text-2xl pl-10">
+            <p className="text-[#B7C0CC] font-bold text-2xl pl-5 md:pl-10">
               {Math.floor(Number(data[0]?.feels_like))}°
             </p>
           </div>
@@ -162,7 +162,7 @@ const Content = () => {
               <FaWind className="text-3xl" />
               <h3 className="text-xl font-semibold">Wind</h3>
             </div>
-            <p className="text-[#B7C0CC] font-bold text-2xl pl-10">
+            <p className="text-[#B7C0CC] font-bold text-2xl pl-5 md:pl-10">
               {data[0]?.speed} km/h
             </p>
           </div>
@@ -171,14 +171,14 @@ const Content = () => {
               <SiRainmeter className="text-3xl" />
               <h3 className="text-xl font-semibold">Chance of Rain</h3>
             </div>
-            <p className="text-[#B7C0CC] font-bold text-2xl pl-10">0%</p>
+            <p className="text-[#B7C0CC] font-bold text-2xl pl-5 md:pl-10">0%</p>
           </div>
           <div className="w-[45%] text-[#656F81]">
             <div className="flex gap-3 items-center">
               <SiSunrise className="text-3xl" />
               <h3 className="text-xl font-semibold">Description</h3>
             </div>
-            <p className="text-[#B7C0CC] font-bold text-2xl pl-10">
+            <p className="text-[#B7C0CC] font-bold text-2xl pl-5 md:pl-10">
               {data[0]?.description}
             </p>
           </div>
