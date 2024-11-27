@@ -5,6 +5,7 @@ import { PiCityBold } from "react-icons/pi";
 import { FaMap } from "react-icons/fa";
 import { CiSettings } from "react-icons/ci";
 import { useWeatherContext } from '../context/WeatherContext';
+import { Link } from 'react-router-dom';
 
 type Props = {}
 
@@ -15,7 +16,6 @@ const SideBar = (props: Props) => {
 
 
     const changeActive = (e: React.MouseEvent<HTMLDivElement>, parameter: string)=>{
-        e.preventDefault();
         setActiveMenu(parameter);
     }
   return (
@@ -24,14 +24,19 @@ const SideBar = (props: Props) => {
             <MdTornado />
         </div>
         <div className='text-white flex flex-col gap-6 pt-10 '>
+            <Link to={"/"}>
             <div onClick={(e)=>changeActive(e,"weather")} className={`flex flex-col text-xl items-center cursor-pointer ${activeMenu==="weather" && "text-yellow-300"}`}>
                 <TiWeatherCloudy className='text-4xl' />
-                <a href="">Weather</a>
+                <a>Weather</a>
             </div>
+            </Link>
+            <Link to={"/cities"}>
             <div onClick={(e)=>changeActive(e,"cities")} className={`flex flex-col text-xl items-center cursor-pointer ${activeMenu==="cities" && "text-yellow-300"}`}>
                 <PiCityBold className='text-4xl' />
-                <a href="">Cities</a>
+                <a>Cities</a>
             </div>
+            </Link>
+            
             <div onClick={(e)=>changeActive(e,"map")} className={`flex flex-col text-xl items-center cursor-pointer ${activeMenu==="map" && "text-yellow-300"}`}>
                 <FaMap className='text-4xl' />
                 <a href="">Map</a>
