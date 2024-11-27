@@ -4,11 +4,13 @@ import { TiWeatherCloudy } from "react-icons/ti";
 import { PiCityBold } from "react-icons/pi";
 import { FaMap } from "react-icons/fa";
 import { CiSettings } from "react-icons/ci";
+import { useWeatherContext } from '../context/WeatherContext';
 
 type Props = {}
 
 const SideBar = (props: Props) => {
-    const [activeMenu,setActiveMenu] = useState<string>("weather");
+    // const [activeMenu,setActiveMenu] = useState<string>("weather");
+    const {activeMenu,setActiveMenu} = useWeatherContext();
 
 
 

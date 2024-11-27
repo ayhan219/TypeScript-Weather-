@@ -14,6 +14,8 @@ getLocation:string,
 setGetLocation:(getLocation:string)=>(void);
 hourly:hourlyData[],
 setHourly:(hourly:hourlyData[])=>(void)
+activeMenu:string,
+setActiveMenu:(activeMenu:string)=>(void); 
 
 }
 
@@ -27,9 +29,10 @@ type WeatherProviderProps={
 export const WeatherProvider : React.FC<WeatherProviderProps>=({children})=>{
     const [getLocation,setGetLocation] = useState<string>("ankara");
     const [hourly,setHourly] =useState<hourlyData[]>([]);
+    const [activeMenu,setActiveMenu] = useState<string>("weather");
 
     return(
-        <WeatherContext.Provider value={{getLocation,setGetLocation,hourly,setHourly}}>
+        <WeatherContext.Provider value={{getLocation,setGetLocation,hourly,setHourly,activeMenu,setActiveMenu}}>
             {children}
         </WeatherContext.Provider>
     )
