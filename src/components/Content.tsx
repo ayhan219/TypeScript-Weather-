@@ -74,7 +74,7 @@ const Content = () => {
   };
 
   return (
-    <div className="md:w-[50%] w-full h-full md:ml-32 ml-4 sm:ml-8 flex flex-col items-end  gap-5">
+    <div className="md:w-[50%] w-full h-full md:ml-32 ml-4 sm:ml-8 flex flex-col items-end mb-10  gap-5">
       {/* Search Input */}
       <div>
         <input

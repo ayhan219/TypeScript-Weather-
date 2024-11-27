@@ -48,7 +48,7 @@ const Map = () => {
         getMapData();
     },[latitude,longitude])
   return (
-    <div className="w-full h-screen bg-[#0B121E] flex flex-col items-center">
+    <div className="w-full h-screen bg-[#0B121E] flex flex-col items-center pr-20">
       {/* Başlık */}
       <div>
         <h1 className="text-white font-bold text-4xl pt-10">Map</h1>
