@@ -37,10 +37,12 @@ const SideBar = (props: Props) => {
             </div>
             </Link>
             
+            <Link to={"/map"}>
             <div onClick={(e)=>changeActive(e,"map")} className={`flex flex-col text-xl items-center cursor-pointer ${activeMenu==="map" && "text-yellow-300"}`}>
                 <FaMap className='text-4xl' />
                 <a href="">Map</a>
             </div>
+            </Link>
             <div onClick={(e)=>changeActive(e,"settings")} className={`flex flex-col text-xl items-center cursor-pointer ${activeMenu==="settings" && "text-yellow-300"}`}>
                 <CiSettings className='text-4xl' />
                 <a href="">Settings</a>

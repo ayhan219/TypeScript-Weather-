@@ -15,7 +15,12 @@ setGetLocation:(getLocation:string)=>(void);
 hourly:hourlyData[],
 setHourly:(hourly:hourlyData[])=>(void)
 activeMenu:string,
-setActiveMenu:(activeMenu:string)=>(void); 
+setActiveMenu:(activeMenu:string)=>(void);
+latitude:number,
+setLatitude:(latitude:number)=>(void);
+longitude:number,
+setLongitude:(longitude:number)=>(void);
+
 
 }
 
@@ -30,9 +35,11 @@ export const WeatherProvider : React.FC<WeatherProviderProps>=({children})=>{
     const [getLocation,setGetLocation] = useState<string>("ankara");
     const [hourly,setHourly] =useState<hourlyData[]>([]);
     const [activeMenu,setActiveMenu] = useState<string>("weather");
+    const [latitude,setLatitude] = useState<number>(0);
+    const [longitude,setLongitude] = useState<number>(0);
 
     return(
-        <WeatherContext.Provider value={{getLocation,setGetLocation,hourly,setHourly,activeMenu,setActiveMenu}}>
+        <WeatherContext.Provider value={{getLocation,setGetLocation,hourly,setHourly,activeMenu,setActiveMenu,latitude,setLatitude,longitude,setLongitude}}>
             {children}
         </WeatherContext.Provider>
     )

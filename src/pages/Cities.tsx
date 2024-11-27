@@ -7,7 +7,8 @@ type Props = {}
 const Cities = (props: Props) => {
   return (
     
-    <div className='w-full h-screen bg-blue-950'>
+    <div className='w-full h-screen bg-[#0B121E]'>
+      
     </div>
   )
 }
