@@ -7,7 +7,7 @@ type Props = {}
 
 const Home = (props: Props) => {
   return (
-    <div className='w-full h-screen bg-[#0B121E] p-8 flex'>
+    <div className='w-full h-auto bg-[#0B121E] p-8 flex-col flex md:flex-row'>
         <Content />
         <DayForecast />
     </div>
