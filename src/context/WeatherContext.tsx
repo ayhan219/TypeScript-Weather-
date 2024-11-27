@@ -25,7 +25,7 @@ type WeatherProviderProps={
 }
 
 export const WeatherProvider : React.FC<WeatherProviderProps>=({children})=>{
-    const [getLocation,setGetLocation] = useState<string>("");
+    const [getLocation,setGetLocation] = useState<string>("ankara");
     const [hourly,setHourly] =useState<hourlyData[]>([]);
 
     return(
