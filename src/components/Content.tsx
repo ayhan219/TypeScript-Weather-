@@ -80,7 +80,7 @@ const Content = () => {
     }
     
   return (
-    <div className='w-[50%] h-full ml-8 flex flex-col'>
+    <div className='w-[50%] h-full ml-32 flex flex-col'>
         <div>
         <input onKeyDown={(e)=>pressKey(e)} className='w-full h-10 bg-[#202B3D] outline-none rounded-lg text-white text-xl' placeholder='Search for cities' type="text" />
         </div>

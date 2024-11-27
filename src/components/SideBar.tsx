@@ -19,7 +19,7 @@ const SideBar = (props: Props) => {
         setActiveMenu(parameter);
     }
   return (
-    <div className='w-32 h-full bg-[#202B3D] rounded-lg'>
+    <div className='w-32 h-full bg-[#202B3D] rounded-lg absolute'>
         <div className='text-5xl text-white flex justify-center pt-4 cursor-pointer'>
             <MdTornado />
         </div>
