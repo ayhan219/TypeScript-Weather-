@@ -79,14 +79,14 @@ const Content = () => {
       <div>
         <input
           onKeyDown={(e) => pressKey(e)}
-          className="w-full max-w-lg h-10 bg-[#202B3D] outline-none rounded-lg text-white text-xl px-3"
+          className="w-full max-w-lg h-10 bg-[#202B3C] outline-none rounded-lg text-white text-xl px-3"
           placeholder="Search for cities"
           type="text"
         />
       </div>
 
       {/* Weather Info */}
-      <div className="md:w-full w-[80%] h-auto text-white flex  p-4 md:gap-8 gap-4 bg-[#1A202C]  rounded-lg">
+      <div className="md:w-full w-[80%] h-auto text-white flex  p-4 md:gap-8 gap-4 bg-[#202B3C]  rounded-lg">
         <div className="flex flex-col w-full md:w-[60%]  gap-4">
           <div className="flex flex-col gap-3">
             <h2 className="text-4xl font-bold">{data[0]?.name}</h2>
@@ -147,7 +147,7 @@ const Content = () => {
             See more
           </button>
         </div>
-        <div className="flex justify-center md:justify-normal flex-wrap gap-6 mt-6">
+        <div className="flex justify-start flex-wrap gap-6 mt-6">
           <div className="w-[45%] text-[#656F81]">
             <div className="flex gap-3 items-center">
               <FaTemperatureHigh className="text-3xl" />
