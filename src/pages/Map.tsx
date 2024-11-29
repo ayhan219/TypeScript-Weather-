@@ -48,60 +48,61 @@ const Map = () => {
         getMapData();
     },[latitude,longitude])
   return (
-    <div className="w-full h-screen bg-[#0B121E] flex flex-col items-center pr-20">
+    <div className="w-full h-screen bg-[#0B121E] flex flex-col  md:pr-20">
       {/* Başlık */}
       <div>
         <h1 className="text-white font-bold text-4xl pt-10">Map</h1>
       </div>
 
       {/* Harita Alanı */}
-      <div className="w-full h-[40%] flex justify-center items-center ml-20">
+      <div className="w-full h-[40%] flex justify-end md:justify-center items-center pr-10 md:pr-0 ml-0 md:ml-20">
         <div className="w-[60%] h-[90%] bg-white rounded-lg shadow-lg">
           <MapArea />
         </div>
       </div>
 
       {/* Hava Durumu Bilgileri */}
-      <div className="w-full h-96 flex justify-center items-center ml-20">
+      <div className="w-full h-96 flex justify-end md:justify-center items-center pr-6 md:pr-0 ml-0 md:ml-20">
         <div className="w-[70%] h-full bg-[#202B3D] p-5 rounded-lg shadow-md text-white">
           {/* Başlık ve Genel Hava Durumu */}
           <div className="w-full h-[50%] flex justify-between items-center border-b border-gray-600 pb-4">
             <div>
-              <h1 className="text-3xl font-bold">{weatherData[0]?.location}</h1>
-              <p className="text-gray-300 text-sm">Current Weather Overview</p>
+              <h1 className="text-2xl md:text-3xl font-bold">{weatherData[0]?.location}</h1>
+              <p className="text-gray-300 text-xs md:text-sm">Current Weather Overview</p>
             </div>
             <div className="text-center">
-              <p className="text-5xl font-bold">{Math.floor(Number(weatherData[0]?.temp))}°C</p>
+              <p className="text-2xl md:text-5xl font-bold">{Math.floor(Number(weatherData[0]?.temp))}°C</p>
               <p className="text-gray-400 text-sm">Sunny</p>
             </div>
           </div>
 
           {/* Hava Durumu Bilgileri */}
           <div className="w-full h-[50%] flex justify-between items-center pt-4">
-            <div className="flex flex-col items-center">
-              <FaWind className="text-3xl text-yellow-400" />
-              <p className="text-lg font-semibold">Wind</p>
-              <p className="text-xl font-bold">{weatherData[0]?.speed} km/h</p>
-            </div>
+  <div className="flex flex-col items-center w-[100px] h-[150px]">
+    <FaWind className="text-xl md:text-3xl text-yellow-400" />
+    <p className="text-sm md:text-lg font-semibold">Wind</p>
+    <p className="text-sm md:text-xl font-bold">{weatherData[0]?.speed} km/h</p>
+  </div>
 
-            <div className="flex flex-col items-center">
-              <WiThermometer className="text-3xl text-red-400" />
-              <p className="text-lg font-semibold">Humidity</p>
-              <p className="text-xl font-bold">{weatherData[0]?.humidity}%</p>
-            </div>
+  <div className="flex flex-col items-center w-[100px] h-[150px]">
+    <WiThermometer className="text-xl md:text-3xl text-red-400" />
+    <p className="text-sm md:text-lg font-semibold">Humidity</p>
+    <p className="text-sm md:text-xl font-bold">{weatherData[0]?.humidity}%</p>
+  </div>
 
-            <div className="flex flex-col items-center">
-              <FaTint className="text-3xl text-blue-400" />
-              <p className="text-lg font-semibold">Pressure</p>
-              <p className="text-xl font-bold">{weatherData[0]?.pressure} hPa</p>
-            </div>
+  <div className="flex flex-col items-center w-[100px] h-[150px]">
+    <FaTint className="text-xl md:text-3xl text-blue-400" />
+    <p className="text-sm md:text-lg font-semibold">Pressure</p>
+    <p className="text-sm md:text-xl font-bold">{weatherData[0]?.pressure} hPa</p>
+  </div>
 
-            <div className="flex flex-col items-center">
-              <FaTachometerAlt className="text-3xl text-green-400" />
-              <p className="text-lg font-semibold">Air Pressure</p>
-              <p className="text-xl font-bold">{weatherData[0]?.pressure} hPa</p>
-            </div>
-          </div>
+  <div className="flex flex-col items-center w-[100px] h-[150px]">
+    <FaTachometerAlt className="text-xl md:text-3xl text-green-400" />
+    <p className="text-sm md:text-lg font-semibold">Air Pressure</p>
+    <p className="text-sm md:text-xl font-bold">{weatherData[0]?.pressure} hPa</p>
+  </div>
+</div>
+
         </div>
       </div>
     </div>
