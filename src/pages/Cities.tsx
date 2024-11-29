@@ -9,7 +9,7 @@ const Cities = (props: Props) => {
     
     <div className='w-full h-screen bg-[#0B121E]'>
       <div className='w-full h-auto flex items-center text-3xl font-bold text-white justify-center pt-5'>
-        <h1>Most biggest cities</h1>
+        <h1>Weather conditions of major cities</h1>
       </div>
       <div className='w-full h-[90%] flex'>
         <div className='w-full h-full flex items-end pt-5 flex-col gap-4 pr-5 '>
