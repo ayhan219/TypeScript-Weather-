@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/73512818-1288-45e4-9a78-a2425f2aac33)## Weather Forecast Website 🌦️
+## Weather Forecast Website 🌦️
 
 A responsive weather forecast website built using React and TypeScript, with real-time weather data fetched from the OpenWeather API.
 
