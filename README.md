@@ -14,6 +14,10 @@ Paste the API key you obtained from OpenWeatherAPI into the API.ts file and use 
 ## Images
 
 On the homepage, you can search for a city to view the current weather conditions, daily forecasts, and 7-day weather predictions. Additionally, it displays details such as wind speed and other weather-related information.
-![image](https://github.com/user-attachments/assets/893d2daa-07f7-45d7-9d2c-f59df6bca5f4)
+![image](https://github.com/user-attachments/assets/b85bb219-fa2a-43ed-9817-c07c72a2c5c6)
 
+<br>
 
+In the map section, you can click on any location to view its weather information. The app retrieves the latitude and longitude of the selected point to provide accurate weather details.
+
+![image](https://github.com/user-attachments/assets/5d0295bc-eefa-4592-9c63-f95ddc0ddd4a)
